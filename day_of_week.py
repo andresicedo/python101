@@ -34,4 +34,4 @@ elif day == int("5"):
 elif day == int("6"):
     print("Saturday")
 else:
-    print("Pick a day between 0-6!")
+    print("Pick a day between 0 and 6!")
