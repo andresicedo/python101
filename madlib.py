@@ -26,10 +26,11 @@ Guess_7 = input("open _____ ")
 
 
 madlib = f"Jingle {Guess_1}, jingle {Guess_2}, /Jingle all the {Guess_3}/Oh, what {Guess_4} it is to {Guess_5}/In a one {Guess_6} open {Guess_7}!"
+jingle = "Jingle bells, jingle bells, /Jingle all the way/Oh, what fun it is to ride/In a one horse open sleigh!"
 
 print(madlib)
 
-if madlib == "Jingle bells, jingle bells, /Jingle all the way/Oh, what fun it is to ride/In a one horse open sleigh!":
+if madlib == jingle:
     print("You did it!")
 else:
     print("Sorry, please try again!")
