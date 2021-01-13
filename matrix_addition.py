@@ -31,5 +31,6 @@ two_atone = list_two[1]
 
 one_one = list_one[1]
 two_one = list_two[1]
-print([one_atzero[0] + two_atzero[0], one_atone[1] + two_atone[1]],
-[one_one[0] + two_one[0], one_one[1] + two_one[1]])
+matrix = [[one_atzero[0] + two_atzero[0], one_atzero[1] + two_atzero[1]],
+[one_one[0] + two_one[0], one_one[1] + two_one[1]]]
+print(matrix)
