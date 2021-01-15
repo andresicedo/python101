@@ -20,7 +20,7 @@ NOTE: It doesn't have to look exactly like this output, this was
 just for clarities sake
 The next number is found by adding up the two numbers before it
 '''
-final = int(input("Enter the range number: "))
+final = abs(int(input("Enter the range number: ")))
 def fibonacci(final):
     first = 0
     second = 1
