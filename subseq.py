@@ -20,7 +20,7 @@ def isValidSubsequence(array, sequence):
 #make sure to add both array and sequence as arguements.
 '''
 def isValidSubsequence(array, sequence): 
-    if sequence[0] in array and sequence[1] in array:
+    if :
         return True
     else:
         return False
