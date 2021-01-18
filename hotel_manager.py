@@ -32,7 +32,6 @@ Loop the program so that it goes back to the first question after displaying a l
 Import Python's pprint module for printing out the list of occupants. 
 https://docs.python.org/3/library/pprint.html
 '''
-
 hotel = {
   '1': {
     '101': ['George Jefferson', 'Wheezy Jefferson'],
@@ -44,56 +43,109 @@ hotel = {
     '333': ['Neo', 'Trinity', 'Morpheus']
   }
 }
-# Display a menu asking whether to check in or check out.
-menu = input("Hello! What would you like to do? \nCheck In\nCheck Out\n")
-# Prompt the user for a floor number, then a room number.
-# If checking in, ask for the number of occupants and what their names are.
-if menu == 'Check In' or 'Check In'.lower():
+def registration(menu):
+  if menu == 1:
     floor = int(input(f"What floor? {hotel.keys()}\n"))
     if floor == 1:
-        floor_one = '100-199'
-        room = int(input(f"What room number? {floor_one}\n"))
-        while hotel[f"{floor}"][f"{room}"]:
-            print("ROOM OCCUPIED!\nPlease pick a different floor")
-            room = int(input(f"What room number? {floor_one}\n"))
-            break
+      rooms = '100-199'
+      room = input(f"What room number? {rooms}\n")
     if floor == 2:
-        floor_one = '200-299'
-        room = int(input(f"What room number? {floor_one}\n"))
-        while hotel[f"{floor}"][f"{room}"]:
-            print("ROOM OCCUPIED!\nPlease pick a different floor")
-            room = int(input(f"What room number? {floor_one}\n"))
-            break
+      rooms = '200-299'
+      room = input(f"What room number? {rooms}\n")
     if floor == 3:
-        floor_one = '300-399'
-        room = int(input(f"What room number? {floor_one}\n"))
-        while hotel[f"{floor}"][f"{room}"]:
-            print("ROOM OCCUPIED!\nPlease pick a different floor")
-            room = int(input(f"What room number? {floor_one}\n"))
-            break
-    occupants = int(input("How many occupants will be checking in?\n"))
+      rooms = '300-399'
+      room = input(f"What room number? {rooms}\n")
+    for occupied in hotel[f"{floor}"]:
+      while occupied == room:
+        print("ROOM OCCUPIED!\nPlease pick a different room")
+        room = input(f"What room number? {rooms}\n")
+        while occupied == room:
+          print("ROOM OCCUPIED!\nPlease pick a different room")
+          room = input(f"What room number? {rooms}\n")
+          while occupied == room:
+            print("ROOM OCCUPIED!\nPlease pick a different room")
+            return registration(menu)
+        break
+    occupants = int(input("How many guests will be checking in?\n"))  
     if occupants == 1:
-        name = input("May I please have your name? ")
-        hotel[f"{floor}"][f"{room}"] = name
-        print("Current Occupants: ", hotel)
+      name = input("May I please have your name? ")
+      hotel[f"{floor}"][f"{room}"] = [name]
+      print(f"Thank you for checking in {name}!\nYou are in room {room}!")
+      print(f"Current Occupants: , {hotel})\n")
     if occupants == 2:
-        print("May I please have your names? ")
-        name1 = input("Name 1: ")
-        name2 = input("Name 2: ")
-        hotel[f"{floor}"][f"{room}"] = [name1, name2]
-        print(hotel)
+      print("May I please have your names? ")
+      name1 = input("Name 1: ")
+      name2 = input("Name 2: ")
+      hotel[f"{floor}"][f"{room}"] = [name1, name2]
+      print(f"Thank you for checking in {name1} and {name2}!\nYou are in room {room}!")
+      print ("Current Occupants: ", hotel)
     if occupants == 3:
-        print("May I please have your names? ")
-        name1 = input("Name 1: ")
-        name2 = input("Name 2: ")
-        name3 = input("Name 3: ")
-        hotel[f"{floor}"][f"{room}"] = [name1, name2, name3]
-        print("Thank you for checking in!")
-        print(hotel)
-# If checking out, remove the occupants from that room.
-if menu == 'Check Out' or "Check Out".lower():
-    room = input("What room number? \n")
-    print("Thank you for staying with us!")
-    del hotel[floor][room]
-    print(hotel)
-# After checking in or out, display a list of all the occupants and their rooms.
+      print("May I please have your names? ")
+      name1 = input("Name 1: ")
+      name2 = input("Name 2: ")
+      name3 = input("Name 3: ")
+      hotel[f"{floor}"][f"{room}"] = [name1, name2, name3]
+      print(f"Thank you for checking in {name1}, {name2} and {name3}!\nYou are in room {room}!")
+      print(f"Current Occupants: , {hotel})\n")
+    if occupants == 4:
+      print("May I please have your names? ")
+      name1 = input("Name 1: ")
+      name2 = input("Name 2: ")
+      name3 = input("Name 3: ")
+      name4 = input("Name 4: ")
+      hotel[f"{floor}"][f"{room}"] = [name1, name2, name3, name4]
+      print(f"Thank you for checking in {name1}, {name2}, {name3} and {name4}!\nYou are in room {room}!")
+      print(f"Current Occupants: , {hotel})\n")
+    if occupants == 5:
+      print("May I please have your names? ")
+      name1 = input("Name 1: ")
+      name2 = input("Name 2: ")
+      name3 = input("Name 3: ")
+      name4 = input("Name 4: ")
+      name5 = input("Name 5: ")
+      hotel[f"{floor}"][f"{room}"] = [name1, name2, name3, name4, name5]
+      print(f"Thank you for checking in {name1}, {name2}, {name3}, {name4} and {name5}!\nYou are in room {room}!")
+      print(f"Current Occupants: , {hotel})\n")
+    if occupants == 6:
+      print("May I please have your names? ")
+      name1 = input("Name 1: ")
+      name2 = input("Name 2: ")
+      name3 = input("Name 3: ")
+      name4 = input("Name 4: ")
+      name5 = input("Name 5: ")
+      name6 = input("Name 6: ")
+      hotel[f"{floor}"][f"{room}"] = [name1, name2, name3, name4, name5, name6]
+      print(f"Thank you for checking in {name1}, {name2}, {name3}, {name4}, {name5} and {name6}!\nYou are in room {room}!")
+      print(f"Current Occupants: , {hotel})\n")
+    while occupants > 6:
+      print("The hotel only allows a maximum of 6 guests per room.\nConsider getting a second room.\n")
+      return registration(menu)
+  if menu == 2:
+    floor = int(input(f"What floor? {hotel.keys()}\n"))
+    occupied = hotel[str(floor)].keys()
+    room = input(f"Choose your room on floor {floor}? \nOccupied rooms: {occupied}\n")
+    if room not in occupied:
+      print("Invalid room number!\nPlease try again.")
+      room = input(f"Choose your room on floor {floor}? \nOccupied rooms: {occupied}\n")
+    name = input("May I please have your name? ")
+    if name in hotel[str(floor)][room]:
+      print(f"Thank you for staying with us {name}!")
+      print(f"You have been checked out of room {room}!")
+      del hotel[str(floor)][room]
+      print(f"Current Occupants: , {hotel})\n")
+    else:
+          print("I'm sorry I don't have you registered as a guest.")
+          name = input("Please entere the registered guest name: ")
+          for name in hotel[str(floor)][room]:
+            if hotel[str(floor)][room].index(name) > -1:
+              print(f"Thank you for staying with us {name}!")
+              del hotel[str(floor)][room]
+              print(f"Current Occupants: , {hotel})\n")
+  while menu != 1 or 2:
+    registration(int(input("What else would you like to do? \n1) Check In\n2) Check Out\n")))
+
+while True:
+  registration(int(input("What else would you like to do? \n1) Check In\n2) Check Out\n")))
+
+output = registration(int(input("Hello! What would you like to do? \n1) Check In\n2) Check Out\n")))
+print(output)
