@@ -71,14 +71,18 @@ def registration(menu):
       name = input("May I please have your name? ")
       hotel[f"{floor}"][f"{room}"] = [name]
       print(f"Thank you for checking in {name}!\nYou are in room {room}!")
-      print(f"Current Occupants: , {hotel})\n")
+      print(f"Current Occupants:\n")
+      for key,value in hotel.items():
+        print(key, value)
     if occupants == 2:
       print("May I please have your names? ")
       name1 = input("Name 1: ")
       name2 = input("Name 2: ")
       hotel[f"{floor}"][f"{room}"] = [name1, name2]
       print(f"Thank you for checking in {name1} and {name2}!\nYou are in room {room}!")
-      print ("Current Occupants: ", hotel)
+      print(f"Current Occupants:\n")
+      for key,value in hotel.items():
+        print(key, value)
     if occupants == 3:
       print("May I please have your names? ")
       name1 = input("Name 1: ")
@@ -86,7 +90,9 @@ def registration(menu):
       name3 = input("Name 3: ")
       hotel[f"{floor}"][f"{room}"] = [name1, name2, name3]
       print(f"Thank you for checking in {name1}, {name2} and {name3}!\nYou are in room {room}!")
-      print(f"Current Occupants: , {hotel})\n")
+      print(f"Current Occupants:\n")
+      for key,value in hotel.items():
+        print(key, value)
     if occupants == 4:
       print("May I please have your names? ")
       name1 = input("Name 1: ")
@@ -95,7 +101,9 @@ def registration(menu):
       name4 = input("Name 4: ")
       hotel[f"{floor}"][f"{room}"] = [name1, name2, name3, name4]
       print(f"Thank you for checking in {name1}, {name2}, {name3} and {name4}!\nYou are in room {room}!")
-      print(f"Current Occupants: , {hotel})\n")
+      print(f"Current Occupants:\n")
+      for key,value in hotel.items():
+        print(key, value)
     if occupants == 5:
       print("May I please have your names? ")
       name1 = input("Name 1: ")
@@ -105,7 +113,9 @@ def registration(menu):
       name5 = input("Name 5: ")
       hotel[f"{floor}"][f"{room}"] = [name1, name2, name3, name4, name5]
       print(f"Thank you for checking in {name1}, {name2}, {name3}, {name4} and {name5}!\nYou are in room {room}!")
-      print(f"Current Occupants: , {hotel})\n")
+      print(f"Current Occupants:\n")
+      for key,value in hotel.items():
+        print(key, value)
     if occupants == 6:
       print("May I please have your names? ")
       name1 = input("Name 1: ")
@@ -116,7 +126,9 @@ def registration(menu):
       name6 = input("Name 6: ")
       hotel[f"{floor}"][f"{room}"] = [name1, name2, name3, name4, name5, name6]
       print(f"Thank you for checking in {name1}, {name2}, {name3}, {name4}, {name5} and {name6}!\nYou are in room {room}!")
-      print(f"Current Occupants: , {hotel})\n")
+      print(f"Current Occupants:\n")
+      for key,value in hotel.items():
+        print(key, value)
     while occupants > 6:
       print("The hotel only allows a maximum of 6 guests per room.\nConsider getting a second room.\n")
       return registration(menu)
@@ -132,7 +144,9 @@ def registration(menu):
       print(f"Thank you for staying with us {name}!")
       print(f"You have been checked out of room {room}!")
       del hotel[str(floor)][room]
-      print(f"Current Occupants: , {hotel})\n")
+      print(f"Current Occupants:\n")
+      for key,value in hotel.items():
+        print(key, value)
     else:
           print("I'm sorry I don't have you registered as a guest.")
           name = input("Please entere the registered guest name: ")
@@ -140,7 +154,9 @@ def registration(menu):
             if hotel[str(floor)][room].index(name) > -1:
               print(f"Thank you for staying with us {name}!")
               del hotel[str(floor)][room]
-              print(f"Current Occupants: , {hotel})\n")
+              print(f"Current Occupants:\n")
+              for key,value in hotel.items():
+                print(key, value)
   while menu != 1 or 2:
     registration(int(input("What else would you like to do? \n1) Check In\n2) Check Out\n")))
 
