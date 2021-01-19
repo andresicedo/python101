@@ -55,9 +55,8 @@ def registration(menu):
     if floor == 3:
       rooms = '300-399'
       room = input(f"What room number? {rooms}\n")
-    while floor is not 1 or 2 or 3:
-      print("We only have 3 floors at the hotel. \nPlease enter a valid floor\n")
-      return registration(menu)  
+  while menu != 1 or 2 or 3:
+    registration(int(input("What else would you like to do? \n1) Check In\n2) Check Out\n")))
     for occupied in hotel[f"{floor}"]:
       while occupied == room:
         print("ROOM OCCUPIED!\nPlease pick a different room")
